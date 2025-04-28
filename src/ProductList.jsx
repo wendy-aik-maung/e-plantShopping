@@ -9,7 +9,7 @@ function ProductList({ onHomeClick }) {
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
     const cart = useSelector((state) => state.cart);
-    const cartItemCount = cart.items.length;
+const cartItemCount = cart.items.reduce((acc, item) => acc + item.quantity, 0);
     const plantsArray = [
         {
             category: "Air Purifying Plants",
@@ -265,6 +265,7 @@ function ProductList({ onHomeClick }) {
         e.preventDefault();
         setShowCart(false);
     };
+
     return (
         <div>
             <div className="navbar" style={styleObj}>

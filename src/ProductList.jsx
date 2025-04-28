@@ -240,7 +240,6 @@ function ProductList({ onHomeClick }) {
 
     const handleAddToCart = (product) => {
         dispatch(addItem(product));
-        console.log("added to cart")
         setAddedToCart((prevState) => ({
            ...prevState,
            [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
@@ -254,7 +253,6 @@ function ProductList({ onHomeClick }) {
 
     const handleCartClick = (e) => {
         e.preventDefault();
-        console.log("count", cart.items.length)
         setShowCart(true); // Set showCart to true when cart icon is clicked
     };
     const handlePlantsClick = (e) => {
